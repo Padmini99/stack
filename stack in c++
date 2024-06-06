@@ -1,0 +1,69 @@
+// Online C++ compiler to run C++ program online
+#include <bits/stdc++.h>
+using namespace std;
+class Stack {
+  public:
+    int *arr;
+    int size;
+    int top;
+   Stack(int size){
+       this->size=size;
+       arr=new int[size];
+       top=-1;
+   } 
+   void push(int x){
+       if((size-top)>1){
+           top++;
+           arr[top]=x;
+       }
+       else{
+           cout<<"stack overflow"<<endl;
+       }
+   }
+   void pop(){
+       if(top>=0){
+           top--;
+       }
+       else{
+           cout<<"stack underflow"<<endl;
+       }
+   }
+   int peek(){
+       if(top>=0 && top<size){
+           return arr[top];
+       }
+       else{
+           cout<<"stack is empty"<<endl;
+           return -1;
+       }
+   }
+   bool isEmpty(){
+       if(top=-1){
+           return true;
+       }
+       else{
+           return false;
+       }
+   }
+};
+
+int main() {
+    Stack s(3);
+    s.push(13);
+    s.push(10);
+    s.push(23);
+    // s.push(12); if we write this we get output stack overflow
+    cout<<s.peek()<<endl;
+    s.pop();
+    cout<<s.peek()<<endl;
+    s.pop();
+    cout<<s.peek()<<endl;
+    s.pop();
+    cout<<s.peek()<<endl;
+    //s.pop();   if we write this we get output stack underflow
+    isEmpty ? cout<<"stack is empty"<<endl : cout<<"stack is not empty"<<endl;
+    
+    
+    
+    
+}
